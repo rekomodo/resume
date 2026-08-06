@@ -1,0 +1,96 @@
+\section{Projects}
+\resumeSubHeadingListStart
+\ifdefined\showRaftProject
+\resumeProject
+{Raft Consensus Algorithm}
+{Distributed Systems, MIT 6.5840}
+{Feb 2026 - May 2026}
+{}
+\resumeItemListStart
+\item[$\bullet$] Implemented a fault-tolerant consensus algorithm in Go, featuring leader election, log replication, and safety guarantees under extreme network partitions and server failures.
+\item[$\bullet$] Engineered a robust state machine supporting persistent storage and snapshotting to manage memory constraints and accelerate recovery during node reboots.
+\item[$\bullet$] Optimized concurrency using Go’s synchronization primitives (mutexes, condition variables) to handle high-throughput RPC requests while avoiding race conditions and deadlocks.
+\resumeItemListEnd
+\fi
+
+\ifdefined\showSokobamProject
+\resumeProject
+{Sokobam {\href{https://github.com/rekomodo/sokobam}{\footnotesize\faExternalLink \hspace{0.1mm}}}}
+{Real-Time Multiplayer Game}
+{March 2026 - Present}
+{}
+\resumeItemListStart
+\item[$\bullet$] Developed a live, web-based multiplayer puzzle game using React and SpacetimeDB, allowing multiple players to interact in a shared persistent world with low-latency state updates.
+\item[$\bullet$] Implemented client-side rendering and real-time synchronization of player game states.
+\resumeItemListEnd
+\fi
+
+\ifdefined\showFPGAProject
+\resumeProject
+{FPGA Design}
+{FPGA Vector Operations Module, MIT 6.205}
+{Oct 2025 - Dec 2025}
+{}
+\resumeItemListStart
+\item[$\bullet$] Designed and implemented a fully pipelined hardware vector normalizer in VHDL for AMD's Urbana development board, specialized for high-throughput repeated vector operations for use in graphics rendering.
+\item[$\bullet$] Optimized for precision and speed by using numerical approximations where necessary, without compromising result quality, and reducing the module's resource usage to fit within project constraints.
+\item[$\bullet$] Built a cocotb-based verification suite in Python, achieving full functional coverage across randomized vector test cases.
+\resumeItemListEnd
+\fi
+\resumeSubHeadingListEnd
+\vspace{-3.5mm}
+
+\ifdefined\showProcessorDesignProject
+\resumeSubHeadingListStart
+\resumeProject
+{Processor Design}
+{Specialized RISC-V Processor, MIT}
+{Apr 2020 - Jul 2020}
+{}
+\resumeItemListStart
+\item[$\bullet$] Implemented a RISC-V processor in MIT's Minispec HDL, specialized for high-throughput repeated vector operations in neural network training workloads.
+\item[$\bullet$] Designed architectural optimizations including pipelining, cache modifications, and custom instructions.
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+\fi
+
+\ifdefined\showRealTimeGraphicsProject
+\resumeSubHeadingListStart
+\resumeProject
+{6.440 Final Project}
+{Real-Time Graphics Project, MIT}
+{Sep 2025 - Dec 2025}
+{\href{https://github.com/rekomodo/6440_final}{github.com/rekomodo/6440_final}}
+\resumeItemListStart
+\item[$\bullet$] Implemented a real-time interactive graphics application in Godot, focusing on custom rendering behavior and scene-level control.
+\item[$\bullet$] Developed and integrated custom shaders (GLSL/Godot shader language) to control lighting, materials, and visual effects.
+\item[$\bullet$] Worked directly with rendering pipeline concepts including transformations, coordinate spaces, and per-frame update logic.
+\item[$\bullet$] Tuned performance by analyzing draw calls, shader cost, and scene complexity to maintain real-time responsiveness.
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+\fi
+
+\ifdefined\showFMRadiopcbProject
+\resumeSubHeadingListStart
+\resumeProject
+{PCB Design}
+{FM Radio, MIT}
+{Jan 2026}
+{}
+\resumeItemListStart
+\item[$\bullet$] Laid-out and routed the design for an FM Radio via KiCad.
+\item[$\bullet$] Designed audio amplifier and low-pass filter components and verified them in LTSpice.
+\item[$\bullet$] Soldered components onto printed board and debugged for problems.
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+\fi
+
+\ifdefined\showOtherProjectsEntry
+\resumeSubHeadingListStart
+\resumeProject{Other Projects}{}{}{}
+\resumeItemListStart
+\item[$\bullet$] \textbf{Sokobam:} Live multiplayer web game implemented with React and SpacetimeDB.
+\item[$\bullet$] \textbf{Raft Consensus Algorithm:} Implementation of Raft in Go for MIT's Distributed Systems class.
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+\fi

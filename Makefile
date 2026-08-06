@@ -1,7 +1,7 @@
 .PHONY: build clean
 
 build:
-	latexmk -pdf main.tex
+	latexmk -pdf resume.tex
 
 clean:
-	latexmk -C
+	latexmk -C resume.tex
