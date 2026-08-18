@@ -1,0 +1,49 @@
+name: Build and Release Resume PDF
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'resume.tex'
+      - 'sections/**'
+      - 'Makefile'
+      - '.github/workflows/build-resume-pdf.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install TeX Live
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            latexmk \
+            texlive-latex-base \
+            texlive-latex-recommended \
+            texlive-latex-extra \
+            texlive-fonts-recommended \
+            texlive-fonts-extra
+
+      - name: Build PDF
+        run: make build
+
+      - name: Create or update release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: resume-latest
+          name: Latest Resume
+          body: |
+            Automatically built from commit `${{ github.sha }}` on `${{ github.ref_name }}`.
+
+            Download `resume.pdf` below.
+          artifacts: resume.pdf
+          allowUpdates: true
+          makeLatest: true
+          token: ${{ secrets.GITHUB_TOKEN }}
