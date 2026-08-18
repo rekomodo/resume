@@ -34,9 +34,6 @@ jobs:
       - name: Build PDF
         run: make build
 
-      - name: Prepare release asset
-        run: cp resume.pdf Jair_Santana_Resume.pdf
-
       - name: Create or update release
         uses: ncipollo/release-action@v1
         with:
@@ -45,8 +42,8 @@ jobs:
           body: |
             Automatically built from commit `${{ github.sha }}` on `${{ github.ref_name }}`.
 
-            Download `Jair_Santana_Resume.pdf` below.
-          artifacts: Jair_Santana_Resume.pdf
+            Download `resume.pdf` below.
+          artifacts: resume.pdf
           allowUpdates: true
           makeLatest: true
           token: ${{ secrets.GITHUB_TOKEN }}
